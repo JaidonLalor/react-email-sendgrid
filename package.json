@@ -1,0 +1,42 @@
+{
+  "name": "react-email-sendgrid",
+  "version": "1.0.0",
+  "description": "Build on-brand emails with React components that output SendGrid drag-and-drop compatible HTML.",
+  "scripts": {
+    "build": "tsx scripts/render-to-dist.tsx",
+    "watch": "chokidar 'src/**/*' -c 'npm run build'",
+    "test:ethereal": "tsx scripts/test-ethereal.ts",
+    "test:gmail": "tsx scripts/test-gmail.ts"
+  },
+  "keywords": [
+    "react-email",
+    "sendgrid",
+    "email",
+    "email-templates",
+    "drag-and-drop"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "@types/react": "^18.3.26",
+    "@types/react-dom": "^18.3.7",
+    "chokidar-cli": "^3.0.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@react-email/column": "^0.0.13",
+    "@react-email/components": "^0.5.7",
+    "@react-email/render": "^1.4.0",
+    "@react-email/row": "^0.0.12",
+    "@react-email/section": "^0.0.16",
+    "@types/nodemailer": "^7.0.2",
+    "dotenv": "^17.2.3",
+    "glob": "^11.0.3",
+    "nodemailer": "^7.0.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-email": "^4.3.1"
+  }
+}
