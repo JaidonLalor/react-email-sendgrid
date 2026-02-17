@@ -66,7 +66,7 @@ export default function SendGridBaseEmail({ children }: SendGridBaseEmailProps) 
                                             color: colors.gray700,
                                             textAlign: "left"
                                           }}
-                                          bgcolor={colors.gray50}
+                                          bgcolor="#FFFFFF"
                                           width="100%"
                                           align="left"
                                         >

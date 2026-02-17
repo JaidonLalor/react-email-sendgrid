@@ -1,26 +1,57 @@
 import React from "react";
-import { colors } from "../styles";
-import SendGridTwoColumns from "../sendgrid-components/SendGridTwoColumns";
-import { BaseText } from "../sendgrid-components/SendGridText";
-import SendGridDivider from "../sendgrid-components/SendGridDivider";
+import SendGridImage from "../sendgrid-components/SendGridImage";
+import SendGridSpacer from "../sendgrid-components/SendGridSpacer";
 
 interface EmailHeaderProps {
-  text1?: string;
-  text2?: string;
+  logoSrc?: string;
+  logoAlt?: string;
+  logoHref?: string;
+  logoWidth?: string;
 }
 
-export default function EmailHeader({ text1 = "Your App", text2 = "Your Company" }: EmailHeaderProps) {
-  return (
-    <>
-      <SendGridTwoColumns padding="14px 16px 12px 16px">
-        <BaseText tag="p" lineHeight="22px" fontSize="16px" color={colors.gray400} padding="0px 0px 0px 0px">
-          {text1}
-        </BaseText>
-        <BaseText tag="p" lineHeight="22px" fontSize="16px" color={colors.gray400} textAlign="right" padding="0px 0px 0px 0px">
-          {text2}
-        </BaseText>
-      </SendGridTwoColumns>
-      <SendGridDivider padding="0px 0px 0px 0px"/>
-    </>
+export default function EmailHeader({
+  logoSrc = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png",
+  logoAlt = "Logo",
+  logoHref,
+  logoWidth = "48px"
+}: EmailHeaderProps) {
+  const image = (
+    <table
+      className="module"
+      role="module"
+      data-type="image"
+      border={0}
+      cellPadding={0}
+      cellSpacing={0}
+      width="100%"
+      style={{ tableLayout: "fixed" }}
+    >
+      <tbody>
+        <tr>
+          <td
+            style={{ padding: "32px 0 24px 0" }}
+            valign="top"
+            align="center"
+          >
+            <img
+              src={logoSrc}
+              alt={logoAlt}
+              style={{ display: "block", width: logoWidth, height: "auto" }}
+              width={logoWidth}
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
   );
+
+  if (logoHref) {
+    return (
+      <a href={logoHref} target="_blank" style={{ textDecoration: "none" }}>
+        {image}
+      </a>
+    );
+  }
+
+  return image;
 }

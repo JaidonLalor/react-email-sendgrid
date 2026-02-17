@@ -1,23 +1,33 @@
 import React from "react";
-import BaseEmail from "../components/BaseEmail";
+import SendGridBaseEmail from "../sendgrid-components/SendGridBaseEmail";
 import { H1, P } from "../sendgrid-components/SendGridText";
 import SendGridButton from "../sendgrid-components/SendGridButton";
-import SendGridDivider from "../sendgrid-components/SendGridDivider";
+import SendGridSpacer from "../sendgrid-components/SendGridSpacer";
+import EmailHeader from "../components/EmailHeader";
+import Footer from "../components/Footer";
 
 export default function WelcomeEmail() {
   return (
-    <BaseEmail text1="My App" text2="Welcome">
-      <H1>Welcome to My App!</H1>
+    <SendGridBaseEmail>
+      <EmailHeader />
 
-      <P>Thanks for signing up. We're glad to have you on board.</P>
+      <H1>Welcome aboard</H1>
 
-      <P>Click below to get started:</P>
+      <P>
+        Thanks for creating an account. You're all set to get started.
+      </P>
 
-      <SendGridButton href="{{DASHBOARD_LINK}}">Go to Dashboard</SendGridButton>
+      <SendGridButton href="{{DASHBOARD_URL}}">
+        Go to Dashboard
+      </SendGridButton>
 
-      <SendGridDivider />
+      <P>
+        If you have any questions, just reply to this email.
+      </P>
 
-      <P>If you have any questions, just reply to this email. We're happy to help.</P>
-    </BaseEmail>
+      <SendGridSpacer height="16px" />
+
+      <Footer />
+    </SendGridBaseEmail>
   );
 }

@@ -7,7 +7,7 @@ interface ButtonProps {
   align?: 'left' | 'center' | 'right';
 }
 
-export default function SendGridButton({ href, children, align = 'left' }: ButtonProps) {
+export default function SendGridButton({ href, children, align = 'center' }: ButtonProps) {
   return (
     <table
       border={0}
@@ -43,8 +43,8 @@ export default function SendGridButton({ href, children, align = 'left' }: Butto
                     bgcolor={colors.primary}
                     className="inner-td"
                     style={{
-                      borderRadius: "8px",
-                      fontSize: "20px",
+                      borderRadius: "6px",
+                      fontSize: "16px",
                       textAlign: align,
                       backgroundClip: "inherit"
                     }}
@@ -53,15 +53,15 @@ export default function SendGridButton({ href, children, align = 'left' }: Butto
                       href={href}
                       style={{
                         backgroundColor: colors.primary,
-                        border: "1px solid rgba(25, 185, 124, 0.7)",
-                        borderColor: "rgba(25, 185, 124, 0.7)",
-                        borderRadius: "8px",
+                        border: `1px solid ${colors.primary}`,
+                        borderRadius: "6px",
                         borderWidth: "1px",
-                        color: colors.gray700,
+                        color: "#FFFFFF",
                         display: "inline-block",
-                        fontSize: "20px",
+                        fontSize: "16px",
                         fontWeight: "600",
-                        padding: "20px 40px 20px 40px",
+                        letterSpacing: "0.025em",
+                        padding: "14px 32px",
                         textAlign: "center",
                         textDecoration: "none",
                         borderStyle: "solid"
