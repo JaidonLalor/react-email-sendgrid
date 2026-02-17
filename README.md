@@ -45,6 +45,12 @@ npm run test:ethereal WelcomeEmail   # No credentials needed, prints preview URL
 npm run test:gmail WelcomeEmail      # Requires .env.local (see .env.example)
 ```
 
+## Known Issues
+
+- Column components don't maintain proper formatting in vanilla HTML rendering outside of SendGrid
+- Dark mode support is limited by SendGrid's drag-and-drop constraints. The `SendGridCodeBlock` workaround forces dark backgrounds but makes those sections non-editable in the visual editor.
+- SendGrid-specific attributes (`role="module"`, `data-type`, etc.) are not fully covered by TypeScript's built-in HTML types
+
 ## License
 
 MIT
