@@ -2,6 +2,8 @@
 
 Build on-brand emails with your design system in code, then hand them off to designers and managers who can edit copy and rearrange sections in SendGrid's visual editor.
 
+![Sample email output](sampleimage.png)
+
 ## Quick Start
 
 ```bash
